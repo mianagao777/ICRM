@@ -1,0 +1,347 @@
+:root {
+  --d365-primary: #0066bf;
+  --d365-primary-dark: #004578;
+  --d365-primary-light: #e6f2fa;
+  --d365-secondary: #5c2d91;
+  --d365-text: #323130;
+  --d365-text-secondary: #605e5c;
+  --d365-border: #edebe9;
+  --d365-bg: #faf9f8;
+  --d365-bg-white: #ffffff;
+  --d365-success: #107c10;
+  --d365-danger: #d13438;
+  --d365-warning: #ffb900;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--d365-text);
+  background-color: var(--d365-bg);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+nav {
+  background-color: var(--d365-primary);
+  padding: 0 20px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+h2 {
+  margin: 0 0 16px 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--d365-text);
+}
+
+h3 {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--d365-text);
+}
+
+div {
+  padding: 20px;
+}
+
+input, select {
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--d365-border);
+  border-radius: 2px;
+  background-color: var(--d365-bg-white);
+  color: var(--d365-text);
+  min-width: 150px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--d365-primary);
+  box-shadow: 0 0 0 1px var(--d365-primary);
+}
+
+input::placeholder {
+  color: var(--d365-text-secondary);
+}
+
+button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border: 1px solid var(--d365-primary);
+  border-radius: 2px;
+  background-color: var(--d365-primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--d365-primary-dark);
+  border-color: var(--d365-primary-dark);
+}
+
+button:active {
+  background-color: var(--d365-primary-dark);
+}
+
+button:disabled {
+  background-color: #f3f2f1;
+  border-color: #f3f2f1;
+  color: #a19f9d;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--d365-bg-white);
+  border: 1px solid var(--d365-border);
+}
+
+thead {
+  background-color: #f3f2f1;
+}
+
+th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: var(--d365-text);
+  border-bottom: 1px solid var(--d365-border);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--d365-border);
+  color: var(--d365-text);
+}
+
+tr:hover {
+  background-color: var(--d365-primary-light);
+}
+
+.card {
+  background-color: var(--d365-bg-white);
+  border: 1px solid var(--d365-border);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  background-color: var(--d365-bg-white);
+  border: 1px solid var(--d365-border);
+  padding: 20px;
+  box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+}
+
+.stat-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--d365-text-secondary);
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--d365-text);
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  min-width: 120px;
+}
+
+.form-row button {
+  flex-shrink: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--d365-border);
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: var(--d365-primary-light);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--d365-bg-white);
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 400px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--d365-border);
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--d365-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--d365-text);
+  background: none;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--d365-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--d365-text);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+}
+
+.btn-secondary {
+  background-color: var(--d365-bg-white);
+  color: var(--d365-text);
+  border: 1px solid var(--d365-border);
+}
+
+.btn-secondary:hover {
+  background-color: #f3f2f1;
+  border-color: var(--d365-border);
+}
+
+.btn-danger {
+  background-color: var(--d365-danger);
+  border-color: var(--d365-danger);
+}
+
+.btn-danger:hover {
+  background-color: #a80000;
+  border-color: #a80000;
+}
