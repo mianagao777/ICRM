@@ -91,6 +91,4 @@ It focuses on clean architecture, maintainability, API integration and reusable 
 * Improved validation and error handling
 * Additional ERP modules and reporting
 
-## Author
 
-Kasin
